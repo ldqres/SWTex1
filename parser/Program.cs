@@ -76,7 +76,6 @@ namespace parser
                 do
                 {
                     var c = iris[i];
-
                     position = String.Compare(country.Country, c.Key);
 
                     if (position == 0)
@@ -104,7 +103,6 @@ namespace parser
                 do
                 {
                     var c = iris[i];
-
                     position = String.Compare(country.Origin, c.Key);
 
                     if (position == 0)
@@ -138,7 +136,9 @@ namespace parser
                 foreach(var line in csvLines)                
                     for (i = 0; i < 14; i++)                
                         if(line.Value[i] != null)
-                            sw.WriteLine("<{0}> dbp:population[dbp:origin <{1}>; dbp:status \"{2}\"; dbp:year {3}; dbo:populationTotal {4}].", line.CountryIRI, line.OriginIRI, line.Type, 2000 + i, line.Value[i].ToString());                                
+                            sw.WriteLine("<{0}> dbp:population[dbp:origin <{1}>; dbp:status \"{2}\"; dbp:year {3}; dbo:populationTotal {4}].", line.CountryIRI, line.OriginIRI, line.Type, 2000 + i, line.Value[i].ToString());
+
+                sw.Flush();
             }           
         }
     }
