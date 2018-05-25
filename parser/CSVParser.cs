@@ -35,33 +35,8 @@ namespace parser
 
                             values[i - 3] = value;
                         }
-
-                        CSVLine.PopulationType type;
-                        switch(splittedLine[2])
-                        {
-                            case "Internally displaced":
-                                type = CSVLine.PopulationType.InternallyDisplaced;
-                                break;
-                            case "Returned IDPs":
-                                type = CSVLine.PopulationType.ReturnedIDP;
-                                break;                            
-                            case "Returned refugees":
-                                type = CSVLine.PopulationType.ReturnedRefugee;
-                                break;
-                            case "Asylum seekers":
-                                type = CSVLine.PopulationType.AsylumSeekers;
-                                break;
-                            case "Refugees":
-                                type = CSVLine.PopulationType.Refugees;
-                                break;
-                            case "Stateless":
-                                type = CSVLine.PopulationType.Stateless;
-                                break;
-                            default:
-                                type = CSVLine.PopulationType.OthersOfConcern;
-                                break;
-                        }
-                        result.Add(new CSVLine(splittedLine[0], splittedLine[1], type, values));
+                      
+                        result.Add(new CSVLine(splittedLine[0], splittedLine[1], splittedLine[2], values));
                     }
                 }
             }

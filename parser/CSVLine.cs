@@ -9,17 +9,18 @@ namespace parser
     class CSVLine
     {
         public string Country { get; set; }
-        public string Origin { get; set; }
-        public enum PopulationType { AsylumSeekers, InternallyDisplaced, OthersOfConcern, Refugees, ReturnedIDP, ReturnedRefugee, Stateless}
-        public PopulationType type { get; set; }
-        public Int32?[] value { get; }
+        public string Origin { get; set; }        
+        public String Type { get; set; }
+        public Int32?[] Value { get; }
+        public string CountryIRI { get; set; }
+        public string OriginIRI { get; set; }
 
-        public CSVLine(string country, string origin, PopulationType type, Int32?[] value)
+        public CSVLine(string country, string origin, String type, Int32?[] value)
         {
             Country = country;
             Origin = origin;
-            this.type = type;
-            this.value = value;
+            Type = type;
+            Value = value;
         }
     }
 }
